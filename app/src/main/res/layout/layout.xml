@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--constrain layout chính của calculator 23:00 14/03 Hoang-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<!--text view hiển thị số đã bấm -Hoàng -23:00 14/03-->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_chainStyle="spread_inside"
+        app:layout_constraintVertical_weight="2"
+        android:background="#504E4E"
+        android:gravity="center_vertical"
+        android:text="0"
+        android:paddingHorizontal="20dp"
+        android:textAlignment="textEnd"
+        android:textColor="@color/white"
+        android:textSize="60dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/linear1"
+
+        />
+<!--Linear layout để bọc hàng số và phép chia -Hoàng -23:01 14/03-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/linear1"
+        android:layout_height="0dp"
+
+        app:layout_constraintVertical_weight="1"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintBottom_toTopOf="@+id/linear2"
+        >
+<!--Nút button số 7 cho người dùng nhấn -Huy -23:01 14/03-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:text="7"
+            android:gravity="center"
+            android:background="@drawable/border"
+            android:id="@+id/number7"
+            android:textSize="40dp"/>
+
+        <!--Nút button số 8 cho người dùng nhấn -Huy -23:01 14/03-->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:text="8"
+            android:id="@+id/number8"
+
+            android:gravity="center"
+            android:textSize="40dp"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            />
+        <!--Nút button số 9 cho người dùng nhấn -Huy -23:01 14/03-->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:text="9"
+            android:id="@+id/number9"
+
+            android:gravity="center"
+            android:textSize="40dp"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            />
+        <!--Nút button phép chia cho người dùng nhấn -Hoàng -23:01 14/03-->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="110dp"
+            android:id="@+id/divided"
+
+            android:layout_height="match_parent"
+            android:background="@drawable/border2"
+            android:gravity="center"
+            android:text="/"
+            android:textSize="40dp" />
+
+
+    </LinearLayout>
+
+    Linear layout 2 để bọc hàng số thứ 2 và phép nhân -Huy -23:01 14/03
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="1"
+
+        android:id="@+id/linear2"
+        app:layout_constraintTop_toBottomOf="@+id/linear1"
+        app:layout_constraintBottom_toTopOf="@+id/linear3"
+
+        >
+
+        <!--Nút button số 4 cho người dùng nhấn -Huy -23:02 14/03-->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/number4"
+
+            android:text="4"
+            android:gravity="center"
+            android:textSize="40dp"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            />
+        <!--Nút button số 5 cho người dùng nhấn -Hoàng -23:02 14/03-->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/number5"
+
+            android:text="5"
+            android:gravity="center"
+            android:textSize="40dp"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            />
+
+        <!--Nút button số 6 cho người dùng nhấn -Huy -23:02 14/03-->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/number6"
+
+            android:text="6"
+            android:gravity="center"
+            android:textSize="40dp"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            />
+        <!--Nút button phép nhân cho người dùng nhấn -Hoàng -23:03 14/03-->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/multiply"
+
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/border2"
+            android:gravity="center"
+            android:text="X"
+            android:textSize="40dp" />
+    </LinearLayout>
+
+    <!--Linear layout 3 để bọc hàng số thứ 3 và phép trừ -Hoàng -23:03 14/03-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="1"
+        android:id="@+id/linear3"
+        app:layout_constraintTop_toBottomOf="@+id/linear2"
+        app:layout_constraintBottom_toTopOf="@+id/linear4"
+
+        >
+        <!--Nút button số 1 cho người dùng nhấn -Huy -23:03 14/03-->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/number1"
+
+            android:text="1"
+            android:gravity="center"
+            android:textSize="40dp"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            />
+        <!--Nút button số 2 cho người dùng nhấn -Huy -23:03 14/03-->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/number2"
+
+            android:text="2"
+            android:gravity="center"
+            android:textSize="40dp"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            />
+        <!--Nút button số 3 cho người dùng nhấn -Hoàng -23:03 14/03-->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/number3"
+            android:text="3"
+            android:gravity="center"
+            android:textSize="40dp"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            />
+
+        <!--Nút button phép trừ cho người dùng nhấn -Hoàng -23:03 14/03-->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/minus"
+
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/border2"
+            android:gravity="center"
+            android:text="-"
+            android:textSize="40dp" />
+    </LinearLayout>
+
+    <!--Linear layout 4 để bọc hàng số thứ 4 và phép cộng và dấu chấm -Hoàng -23:04 14/03-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="1"
+        android:id="@+id/linear4"
+        app:layout_constraintTop_toBottomOf="@+id/linear3"
+        app:layout_constraintBottom_toTopOf="@+id/linear5"
+
+        >
+
+        <!--Nút button số 0 cho người dùng nhấn -Huy -23:04 14/03-->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/number0"
+
+            android:text="0"
+            android:gravity="center"
+            android:textSize="40dp"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            />
+
+        <!--Nút button dấu chấm cho người dùng nhấn -Huy -23:04 14/03-->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/dot"
+
+            android:text="."
+            android:gravity="center"
+            android:textSize="40dp"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            />
+
+        <!--Nút button phép cộng cho người dùng nhấn -Hoàng -23:04 14/03-->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/plus"
+
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/border2"
+            android:gravity="center"
+            android:text="+"
+            android:textSize="40dp" />
+    </LinearLayout>
+
+    <!--Linear layout 5 để bọc hàng cuối cùng với nút reset và nút dấu = -Hoàng -23:05 14/03-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/linear5"
+        app:layout_constraintVertical_weight="1"
+
+        app:layout_constraintTop_toBottomOf="@+id/linear4"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        >
+        <!--Nút button reset các phép tính -Hoàng -23:05 14/03-->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="205dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/border2"
+            android:gravity="center"
+            android:text="C"
+            android:id="@+id/reset"
+
+            android:textSize="40dp" />
+
+        <!--Nút button dấu bằng cho ra kết quả các phép tính -Huy -23:05 14/03-->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="205dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/border2"
+            android:gravity="center"
+            android:text="="
+            android:id="@+id/equal"
+            android:textSize="40dp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
