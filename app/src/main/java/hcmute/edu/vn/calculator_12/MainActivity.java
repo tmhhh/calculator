@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     TextView screen;
     Integer maxNumb=9;
     Boolean isNew=true;
+    Boolean isError=false;
     public void resetOperatorColor(){
         for (Button operatorBtn :listOperatorBtn){
                     operatorBtn.setTextColor(Color.parseColor("black"));
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         resetOperatorColor();
         secondNumb=null;
         operator=null;
-        result=null;
+        result=0f;
         isNew=true;
 
     }
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void startNewWithoutOldResult(){
         firstNumb="0";
+        isError=false;
         resetCalculator();
         screen.setText(firstNumb);
     }
@@ -89,9 +91,14 @@ public class MainActivity extends AppCompatActivity {
                 //HAVENT CHOSEN OPERATOR
                 if(operator==null)
                     return;
+                if(isError){
+                    screen.setText("ERROR");
+                    resetCalculator();
+                    return;
+                }
 
                 //HAVENT CHOSEN SECOND NUMBER
-                if(secondNumb==null){
+                if(secondNumb==null ){
                   if(operator.equals("+")){
                       result=Float.parseFloat(firstNumb) + Float.parseFloat(firstNumb);
                   }
@@ -119,14 +126,15 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else if(operator.equals("/")){
                         if(secondNumb.equals("0")){
-                            result=null;
+                            screen.setText("ERROR");
+                            isError=true;
+                            resetCalculator();
+                            return;
+
                         }
                         else result=Float.parseFloat(firstNumb) / Float.parseFloat(secondNumb);
                     }
                 }
-                if(result==null)
-                    screen.setText("ERROR");
-                else{
                     if(result!=Math.ceil(result)){
                         screen.setText(result.toString());
                     }
@@ -134,8 +142,6 @@ public class MainActivity extends AppCompatActivity {
                         Integer castedValue=Math.round(result);
                         screen.setText(castedValue.toString());
                     }
-
-                }
                 startNewWithOldResult();
             }
         });
@@ -208,7 +214,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else
                     {
-                        if(secondNumb==null){
+                        if(secondNumb==null ){
                             secondNumb=btn.getText().toString();
                         }
                         else if (!isMaxLength()){
